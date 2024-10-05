@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const dbConnection = require("./database/database");
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 // Ensure that the environment variable name is the same as in Vercel
 const MONGODB_URL = process.env.MONGODB_URL;  // Use the correct environment variable
