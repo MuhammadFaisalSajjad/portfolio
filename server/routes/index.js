@@ -11,8 +11,8 @@ const serviceRouter = require("./service.route");
 const router = express.Router(); // Initialize router here
 
 // Postman testing route
-const addDataRoutes = require("./test_addData.route");
-router.use("/add-data", addDataRoutes);
+// const addDataRoutes = require("./test_addData.route");
+// router.use("/add-data", addDataRoutes);
 
 
 // const router = express.Router();

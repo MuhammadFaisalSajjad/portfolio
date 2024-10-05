@@ -1,26 +1,28 @@
-const express = require('express');
-const mongoose = require('mongoose');
+//  Just for locally Database Check
 
-const router = express.Router();
+// const express = require('express');
+// const mongoose = require('mongoose');
 
-// Example model for adding data
-const User = mongoose.model('User', new mongoose.Schema({ name: String }));
+// const router = express.Router();
 
-// Define the `/add-data` route
-router.get("/", async (req, res) => {
-  const { name } = req.query;
+// // Example model for adding data
+// const User = mongoose.model('User', new mongoose.Schema({ name: String }));
 
-  if (!name) {
-    return res.status(400).send("Name is required");
-  }
+// // Define the `/add-data` route
+// router.get("/", async (req, res) => {
+//   const { name } = req.query;
 
-  try {
-    const user = new User({ name });
-    await user.save();
-    res.status(200).send(`User ${name} added successfully`);
-  } catch (error) {
-    res.status(500).send("Error adding user to the database");
-  }
-});
+//   if (!name) {
+//     return res.status(400).send("Name is required");
+//   }
 
-module.exports = router;
+//   try {
+//     const user = new User({ name });
+//     await user.save();
+//     res.status(200).send(`User ${name} added successfully`);
+//   } catch (error) {
+//     res.status(500).send("Error adding user to the database");
+//   }
+// });
+
+// module.exports = router;
