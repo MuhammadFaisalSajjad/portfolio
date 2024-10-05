@@ -25,6 +25,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to Backend");
 });
 
+
 app.use("/api", routes);
 
 // Initializing Server
