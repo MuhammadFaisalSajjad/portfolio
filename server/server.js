@@ -15,7 +15,11 @@ const MONGODB_URL = process.env.MONGODB_URL;  // Use the correct environment var
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors());
+app.use(cors(
+ { origin: ['https://portfolio-dashboard-two-gold.vercel.app/'],
+  methods: ['POST', 'GET', 'PUT', 'DELETE']
+ }
+));
 
 // DB Connection
 dbConnection(MONGODB_URL);
