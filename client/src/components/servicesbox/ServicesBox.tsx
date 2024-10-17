@@ -6,7 +6,7 @@ import { useFetch } from "../../hooks";
 
 const ServiceBox = (): React.JSX.Element => {
   const [service, setService] = useState<Service[]>([]);
-  const url: string = "http://localhost:8080/api/services";
+  const url: string = "https://faisal-portfolio-backend.vercel.app/api/services";
   const { data } = useFetch({ url });
 
   useEffect(() => {

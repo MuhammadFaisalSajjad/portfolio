@@ -8,7 +8,7 @@ import classes from "./index.module.css";
 
 const ProfileCard = (): React.JSX.Element => {
   const [profile, setProfile] = useState<Profile[]>([]);
-  const url: string = "http://localhost:8080/api/profile";
+  const url: string = "https://faisal-portfolio-backend.vercel.app/api/profile";
   const { data } = useFetch({ url });
 
   useEffect(() => {

@@ -15,7 +15,7 @@ import DownloadButton from "../downloadButton/DownloadButton";
 
 const AboutSection = (): React.JSX.Element => {
   const [about, setAbout] = useState<About[]>([]);
-  const url = "http://localhost:8080/api/about";
+  const url = "https://faisal-portfolio-backend.vercel.app/api/about";
   const { data } = useFetch({ url });
 
   useEffect(() => {

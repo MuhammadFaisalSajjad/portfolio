@@ -5,7 +5,7 @@ import { Project } from "../../models";
 
 const WorkSection = (): React.JSX.Element => {
   const [project, setProject] = useState<Project[]>([]);
-  const url: string = "http://localhost:8080/api/projects";
+  const url: string = "https://faisal-portfolio-backend.vercel.app/api/projects";
   const { data } = useFetch({ url });
 
   useEffect(() => {
