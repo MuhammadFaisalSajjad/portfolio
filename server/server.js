@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: "*",
+    origin: "https://portfolio-dashboard-two-gold.vercel.app", // Allow specific origin
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
@@ -33,6 +33,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api", routes);
+
+app.options("*", cors());
 
 // Initializing Server
 app.listen(port, () => {
