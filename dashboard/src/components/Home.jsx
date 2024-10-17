@@ -24,7 +24,7 @@ function Home() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/profile");
+        const response = await fetch("https://faisal-portfolio-backend.vercel.app/api/profile");
         const profile = await response.json();
         if (Array.isArray(profile.data)) {
           setProfile(profile.data);
@@ -74,7 +74,7 @@ function Home() {
       }
 
       const updatedProfile = await axios.put(
-        `http://localhost:8080/api/profile/${id}`,
+        `https://faisal-portfolio-backend.vercel.app/api/profile/${id}`,
         formData,
         {
           headers: {

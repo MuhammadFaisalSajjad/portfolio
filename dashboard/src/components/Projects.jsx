@@ -32,7 +32,7 @@ function Projects() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/projects");
+        const response = await fetch("https://faisal-portfolio-backend.vercel.app/api/projects");
         const projects = await response.json();
         if (Array.isArray(projects.data)) {
           setProjects(projects.data);
@@ -68,7 +68,7 @@ function Projects() {
       formData.append("url", url);
 
       const newProject = await axios.post(
-        "http://localhost:8080/api/projects",
+        "https://faisal-portfolio-backend.vercel.app/api/projects",
         formData,
         {
           headers: {
@@ -113,7 +113,7 @@ function Projects() {
       }
 
       const project = await axios.put(
-        `http://localhost:8080/api/projects/${id}`,
+        `https://faisal-portfolio-backend.vercel.app/api/projects/${id}`,
         formData,
         {
           headers: {
@@ -133,7 +133,7 @@ function Projects() {
 
   const deleteProject = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/api/projects/${id}`);
+      await axios.delete(`https://faisal-portfolio-backend.vercel.app/api/projects/${id}`);
       setProjects(projects.filter((project) => project._id !== id));
       alert("Project Deleted Successfully");
     } catch (error) {

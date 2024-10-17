@@ -29,7 +29,7 @@ function About() {
   useEffect(() => {
     const fetchAbout = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/about");
+        const response = await fetch("https://faisal-portfolio-backend.vercel.app/api/about");
         const data = await response.json();
         if (Array.isArray(data.data)) {
           setAbout(data.data);
@@ -41,7 +41,7 @@ function About() {
 
     const fetchSkills = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/skills");
+        const response = await fetch("https://faisal-portfolio-backend.vercel.app/api/skills");
         const data = await response.json();
         if (Array.isArray(data.data)) {
           setSkills(data.data);
@@ -79,7 +79,7 @@ function About() {
   const updateAbout = async (id) => {
     try {
       await axios.put(
-        `http://localhost:8080/api/about/${id}`,
+        `https://faisal-portfolio-backend.vercel.app/api/about/${id}`,
         selectedSection,
         {
           headers: { "Content-Type": "application/json" },
@@ -94,7 +94,7 @@ function About() {
 
   const updateSkill = async (id) => {
     try {
-      await axios.put(`http://localhost:8080/api/skills/${id}`, selectedSkill, {
+      await axios.put(`https://faisal-portfolio-backend.vercel.app/api/skills/${id}`, selectedSkill, {
         headers: { "Content-Type": "application/json" },
       });
       alert("Skill updated successfully");
@@ -108,7 +108,7 @@ function About() {
   const deleteSkill = async (id) => {
     if (window.confirm("Are you sure you want to delete this skill?")) {
       try {
-        await axios.delete(`http://localhost:8080/api/skills/${id}`);
+        await axios.delete(`https://faisal-portfolio-backend.vercel.app/api/skills/${id}`);
         setSkills((prevSkills) =>
           prevSkills.filter((skill) => skill._id !== id)
         );
@@ -122,7 +122,7 @@ function About() {
 
   const addSkill = async () => {
     try {
-      await axios.post("http://localhost:8080/api/skills", { skill: newSkill });
+      await axios.post("https://faisal-portfolio-backend.vercel.app/api/skills", { skill: newSkill });
       setSkills((prevSkills) => [...prevSkills, { skill: newSkill }]);
       setNewSkill("");
       alert("Skill added successfully");

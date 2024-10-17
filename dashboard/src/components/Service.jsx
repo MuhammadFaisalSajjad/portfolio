@@ -34,7 +34,7 @@ const Service = () => {
   // Fetch all services from backend
   const fetchServices = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/services");
+      const response = await axios.get("https://faisal-portfolio-backend.vercel.app/api/services");
       setServices(response.data.data);
     } catch (error) {
       setError(true);
@@ -62,7 +62,7 @@ const Service = () => {
   const addService = async () => {
     try {
       const newService = { title, description };
-      await axios.post("http://localhost:8080/api/services", newService);
+      await axios.post("https://faisal-portfolio-backend.vercel.app/api/services", newService);
       alert("Service Added Successfully");
       onOpenChange(); // Close modal
       fetchServices(); // Refresh services
@@ -79,7 +79,7 @@ const Service = () => {
     try {
       const updatedService = { title, description };
       await axios.put(
-        `http://localhost:8080/api/services/${id}`,
+        `https://faisal-portfolio-backend.vercel.app/api/services/${id}`,
         updatedService
       );
       alert("Service Updated Successfully");
@@ -94,7 +94,7 @@ const Service = () => {
   // Delete service
   const deleteService = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/api/services/${id}`);
+      await axios.delete(`https://faisal-portfolio-backend.vercel.app/api/services/${id}`);
       alert("Service Deleted Successfully");
       fetchServices(); // Refresh services
     } catch (error) {

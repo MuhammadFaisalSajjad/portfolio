@@ -30,7 +30,7 @@ const Experience = () => {
   useEffect(() => {
     const experience = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/experience");
+        const response = await fetch("https://faisal-portfolio-backend.vercel.app/api/experience");
         const experience = await response.json();
         if (Array.isArray(experience.data)) {
           setExperience(experience.data);
@@ -67,7 +67,7 @@ const Experience = () => {
     if (selectedExperience) {
       try {
         await axios.put(
-          `http://localhost:8080/api/experience/${selectedExperience._id}`,
+          `https://faisal-portfolio-backend.vercel.app/api/experience/${selectedExperience._id}`,
           {
             company,
             jobTitle,
@@ -84,7 +84,7 @@ const Experience = () => {
       }
     } else {
       try {
-        await axios.post("http://localhost:8080/api/experience", {
+        await axios.post("https://faisal-portfolio-backend.vercel.app/api/experience", {
           company,
           jobTitle,
           project,
@@ -103,7 +103,7 @@ const Experience = () => {
 
   const deleteExperience = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/api/experience/${id}`);
+      await axios.delete(`https://faisal-portfolio-backend.vercel.app/api/experience/${id}`);
       setExperience(experience.filter((exp) => exp._id !== id));
       alert("Experience deleted successfully");
     } catch (error) {
