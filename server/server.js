@@ -16,8 +16,11 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors(
- { origin: ['https://portfolio-dashboard-two-gold.vercel.app/'],
-  methods: ['POST', 'GET', 'PUT', 'DELETE']
+ { origin: ['https://portfolio-dashboard-two-gold.vercel.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+  allowedHeaders: ['Content-Type', 'Authorization'],    
+  credentials: true,                                    
+  optionsSuccessStatus: 200  
  }
 ));
 
