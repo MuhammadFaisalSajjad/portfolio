@@ -10,19 +10,25 @@ const port = process.env.PORT || 3000;
 
 // Ensure that the environment variable name is the same as in Vercel
 const MONGODB_URL = process.env.MONGODB_URL; // Use the correct environment variable
+const whitelist = [
+  "https://portfolio-dashboard-two-gold.vercel.app/",
+  "https://portfolio-livid-pi-85.vercel.app/",
+];
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
 
 // Middleware
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(
-  cors({
-    origin: "https://portfolio-dashboard-two-gold.vercel.app", // Allow specific origin
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  })
-);
+app.use(cors(corsOptions));
 
 // DB Connection
 dbConnection(MONGODB_URL);
