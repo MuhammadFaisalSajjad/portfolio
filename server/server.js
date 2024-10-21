@@ -41,6 +41,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api", routes);
+app.options("*", cors(corsOptions));
 
 
 // Initializing Server
