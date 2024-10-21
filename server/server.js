@@ -40,7 +40,6 @@ app.get("/", (req, res) => {
 
 app.use("/api", routes);
 
-app.options("*", cors());
 
 // Initializing Server
 app.listen(port, () => {
