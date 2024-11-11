@@ -79,11 +79,11 @@ function Home() {
         `https://faisal-portfolio-backend.vercel.app/api/profile/${id}`,
         formData,
         {
+          withCredentials: true,
           headers: {
             "Content-Type": "multipart/form-data",
           },
-        },
-        { withCredentials: true }
+        }
       );
 
       if (Array.isArray(updatedProfile.data)) {
