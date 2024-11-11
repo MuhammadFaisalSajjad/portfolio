@@ -24,6 +24,7 @@ const corsOptionsDelegate = function (req, callback) {
       origin: true,
       methods: "GET,POST,PUT,DELETE,OPTIONS", // Allowed methods
       allowedHeaders: "Content-Type,Authorization", // Allowed headers
+      credentials: true
     };
   } else {
     // If origin is not allowed, block the request
