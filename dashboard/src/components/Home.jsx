@@ -24,7 +24,9 @@ function Home() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await fetch("https://faisal-portfolio-backend.vercel.app/api/profile");
+        const response = await fetch(
+          "https://faisal-portfolio-backend.vercel.app/api/profile"
+        );
         const profile = await response.json();
         if (Array.isArray(profile.data)) {
           setProfile(profile.data);
@@ -80,7 +82,8 @@ function Home() {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-        }
+        },
+        { withCredentials: true }
       );
 
       if (Array.isArray(updatedProfile.data)) {
