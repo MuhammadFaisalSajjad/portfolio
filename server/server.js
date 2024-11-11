@@ -12,19 +12,20 @@ const port = process.env.PORT || 3000;
 const MONGODB_URL = process.env.MONGODB_URL; // Use the correct environment variable
 const whitelist = [
   "https://portfolio-dashboard-two-gold.vercel.app",
-  "https://portfolio-livid-pi-85.vercel.app"
+  "https://portfolio-livid-pi-85.vercel.app",
+  "https://faisal-portfolio-backend.vercel.app",
 ];
 
 // CORS Options Delegate Function
 const corsOptionsDelegate = function (req, callback) {
   let corsOptions;
-  if (whitelist.indexOf(req.header('Origin')) !== -1) {
+  if (whitelist.indexOf(req.header("Origin")) !== -1) {
     // If origin is in the whitelist, allow the request
     corsOptions = {
       origin: true,
       methods: "GET,POST,PUT,DELETE,OPTIONS", // Allowed methods
       allowedHeaders: "Content-Type,Authorization", // Allowed headers
-      credentials: true
+      credentials: true,
     };
   } else {
     // If origin is not allowed, block the request
@@ -37,9 +38,8 @@ const corsOptionsDelegate = function (req, callback) {
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
-// app.use(cors(corsOptionsDelegate));
-app.use(cors({ origin: '*' }));
-
+app.use(cors(corsOptionsDelegate));
+// app.use(cors({ origin: '*' }));
 
 // DB Connection
 dbConnection(MONGODB_URL);
@@ -51,7 +51,6 @@ app.get("/", (req, res) => {
 
 app.use("/api", routes);
 app.options("*", cors(corsOptionsDelegate));
-
 
 // Initializing Server
 app.listen(port, () => {
