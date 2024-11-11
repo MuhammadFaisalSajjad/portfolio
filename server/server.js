@@ -38,7 +38,7 @@ const corsOptionsDelegate = function (req, callback) {
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors(corsOptionsDelegate));
+app.use('*',cors(corsOptionsDelegate));
 // app.use(cors({ origin: '*' }));
 
 // DB Connection
