@@ -49,7 +49,7 @@ const ContactForm = (): React.JSX.Element => {
       from_email: formData.email.value,
       from_subject: formData.subject.value,
       message: formData.message.value,
-      to_name: "M Faisal Sajjad",
+      to_name: "Faisal Sajjad",
     };
 
     // Initialize EmailJS with public key
