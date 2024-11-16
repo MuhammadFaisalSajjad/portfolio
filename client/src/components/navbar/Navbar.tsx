@@ -118,7 +118,7 @@ const Navbar = (): React.JSX.Element => {
         >
           <Group justify="space-between" h="100%">
             <Text fz="h2" fw="bolder" className="text-[#A3CB38]">
-              FAISAL
+              M FAISAL SAJJAD
             </Text>
 
             <Group h="100%" gap={0} visibleFrom="sm">
