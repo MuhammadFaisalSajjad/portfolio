@@ -75,7 +75,7 @@ const AboutSection = (): React.JSX.Element => {
               <Text className="text-gray-500">Projects Done</Text>
             </Box>
             <Box className="px-9 py-4 text-center">
-              <Text className="text-4xl font-bold text-center">25</Text>
+              <Text className="text-4xl font-bold text-center">15</Text>
               <Text className="text-gray-500">Get Awards</Text>
             </Box>
           </Container>
