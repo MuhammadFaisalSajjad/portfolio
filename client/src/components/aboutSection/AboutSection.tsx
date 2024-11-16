@@ -41,9 +41,7 @@ const AboutSection = (): React.JSX.Element => {
             <hr className="border-gray-600 w-[30vw] -z-10 relative right-20 " />
           </div>
           <Text className="mt-10 mb-8 text-5xl">
-            Hello👋I'm <span className="text-[#A3CB38]">Faisal Sajjad</span>, a
-            web developer specializing in solving complex development
-            challenges.
+          Hi there! 👋 I'm M Faisal Sajjad, a passionate web developer with a knack for tackling complex development challenges and transforming ideas into seamless digital experiences.
           </Text>
           <DownloadButton/>
           {about.map((data) => (
