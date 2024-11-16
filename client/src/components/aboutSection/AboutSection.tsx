@@ -3,14 +3,14 @@ import { About } from "../../models";
 import { useFetch } from "../../hooks";
 import { Text, Box, Container, Card } from "@mantine/core";
 import {
-  IconMusic,
+  // IconMusic,
+  IconRobot,
   IconCode,
   IconDatabase,
   IconBook,
   IconDeviceGamepad2,
   IconBrandAmazon,
-  IconRobot,
-
+  
 } from "@tabler/icons-react";
 import "./index.css";
 import DownloadButton from "../downloadButton/DownloadButton";
