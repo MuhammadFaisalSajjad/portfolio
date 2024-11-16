@@ -9,6 +9,8 @@ import {
   IconBook,
   IconDeviceGamepad2,
   IconBrandAmazon,
+  IconRobot,
+
 } from "@tabler/icons-react";
 import "./index.css";
 import DownloadButton from "../downloadButton/DownloadButton";
@@ -57,25 +59,25 @@ const AboutSection = (): React.JSX.Element => {
               className="px-9 py-4 lg:border-r-2 border-gray-600 text-center sm:border-none"
               style={{ borderRightStyle: "dotted" }}
             >
-              <Text className="text-4xl font-bold">10+</Text>
+              <Text className="text-4xl font-bold">3+</Text>
               <Text className="text-gray-500">Years Experiance</Text>
             </Box>
             <Box
               className="px-9 py-4 lg:border-r-2 border-gray-600 text-center sm:border-none"
               style={{ borderRightStyle: "dotted" }}
             >
-              <Text className="text-4xl font-bold">85+</Text>
+              <Text className="text-4xl font-bold">10+</Text>
               <Text className="text-gray-500">Happy Clients</Text>
             </Box>
             <Box
               className="px-9 py-4 lg:border-r-2 border-gray-600 text-center sm:border-none"
               style={{ borderRightStyle: "dotted" }}
             >
-              <Text className="text-4xl font-bold">650+</Text>
+              <Text className="text-4xl font-bold">20+</Text>
               <Text className="text-gray-500">Projects Done</Text>
             </Box>
             <Box className="px-9 py-4 text-center">
-              <Text className="text-4xl font-bold text-center">45</Text>
+              <Text className="text-4xl font-bold text-center">25</Text>
               <Text className="text-gray-500">Get Awards</Text>
             </Box>
           </Container>
@@ -88,8 +90,9 @@ const AboutSection = (): React.JSX.Element => {
                 radius="md"
                 className="flex flex-row gap-2 lg:w-52 sm:!w-full md:!w-52"
               >
-                <IconMusic stroke={2} />
-                <Text className="text-lg">Music</Text>
+                {/* <IconMusic stroke={2} /> */}
+                <IconRobot stroke={2} />
+                <Text className="text-lg">Robotics</Text>
               </Card>
               <Card
                 withBorder
