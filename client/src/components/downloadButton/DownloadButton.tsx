@@ -5,8 +5,8 @@ import { IconDownload } from "@tabler/icons-react";
 const DownloadButton = (): React.JSX.Element => {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/resume.pdf";  
-    link.download = "Faisal_Resume.pdf";  
+    link.href = "/MFS_Resume.pdf";  
+    link.download = "MFS_Resume.pdf";  
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
