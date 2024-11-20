@@ -11,8 +11,8 @@ const ProfileCard = (): React.JSX.Element => {
   const url: string = "https://faisal-portfolio-backend.vercel.app/api/profile";
   const { data } = useFetch({ url });
 
+// Use Effect Below
 
-  
   useEffect(() => {
     try {
       if (data) {
